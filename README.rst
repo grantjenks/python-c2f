@@ -6,9 +6,9 @@ TODO
 
 - Add README sections for release workflow
 
-- Build docs for zoom-ability
+- Use Sphinx: build docs for zoom-ability
 
-- Release only on version tag
+- Add note about configuring secrets
 
 
 Is Python interpreted or compiled?
