@@ -25,7 +25,64 @@ jobs:
     - name: Archive dist artifacts
       uses: actions/upload-artifact@v1
       with:
-        name: dist-ubuntu-${{ matrix.python-version }}
+        name: dist-manylinux2014-3.5
+        path: dist
+
+  build-linux-cp36:
+    runs-on: ubuntu-latest
+    container: quay.io/pypa/manylinux2014_x86_64
+
+    steps:
+    - uses: actions/checkout@master
+
+    - name: Install Python package dependencies
+      run: /opt/python/cp36-cp36m/bin/python -m pip install cython wheel
+
+    - name: Build binary wheel
+      run: /opt/python/cp36-cp36m/bin/python setup.py bdist_wheel
+
+    - name: Archive dist artifacts
+      uses: actions/upload-artifact@v1
+      with:
+        name: dist-manylinux2014-3.6
+        path: dist
+
+  build-linux-cp37:
+    runs-on: ubuntu-latest
+    container: quay.io/pypa/manylinux2014_x86_64
+
+    steps:
+    - uses: actions/checkout@master
+
+    - name: Install Python package dependencies
+      run: /opt/python/cp37-cp37m/bin/python -m pip install cython wheel
+
+    - name: Build binary wheel
+      run: /opt/python/cp37-cp37m/bin/python setup.py bdist_wheel
+
+    - name: Archive dist artifacts
+      uses: actions/upload-artifact@v1
+      with:
+        name: dist-manylinux2014-3.7
+        path: dist
+
+  build-linux-cp38:
+    runs-on: ubuntu-latest
+    container: quay.io/pypa/manylinux2014_x86_64
+
+    steps:
+    - uses: actions/checkout@master
+
+    - name: Install Python package dependencies
+      run: /opt/python/cp38-cp38m/bin/python -m pip install cython wheel
+
+    - name: Build binary wheel
+      run: /opt/python/cp38-cp38m/bin/python setup.py bdist_wheel
+
+    - name: Archive dist artifacts
+      uses: actions/upload-artifact@v1
+      with:
+        name: dist-manylinux2014-3.8
         path: dist
 
   build-macos:
@@ -91,7 +148,7 @@ jobs:
         path: dist
 
   upload:
-    needs: [build-linux-cp35, build-macos, build-windows]
+    needs: [build-linux-cp35, build-linux-cp36, build-linux-cp37, build-linux-cp38, build-macos, build-windows]
     runs-on: ubuntu-latest
 
     steps:
@@ -110,29 +167,29 @@ jobs:
     - name: Create source dist
       run: python setup.py sdist
 
-    - name: Stage ubuntu-latest 3.5
+    - name: Stage manylinux2014 3.5
       uses: actions/download-artifact@v1
       with:
-        name: dist-ubuntu-latest-3.5
-    - run: mv -v dist-ubuntu-latest-3.5/* dist/
+        name: dist-manylinux2014-3.5
+    - run: mv -v dist-manylinux2014-3.5/* dist/
 
-    - name: Stage ubuntu-latest 3.6
+    - name: Stage manylinux2014 3.6
       uses: actions/download-artifact@v1
       with:
-        name: dist-ubuntu-latest-3.6
-    - run: mv -v dist-ubuntu-latest-3.6/* dist/
+        name: dist-manylinux2014-3.6
+    - run: mv -v dist-manylinux2014-3.6/* dist/
 
-    - name: Stage ubuntu-latest 3.7
+    - name: Stage manylinux2014 3.7
       uses: actions/download-artifact@v1
       with:
-        name: dist-ubuntu-latest-3.7
-    - run: mv -v dist-ubuntu-latest-3.7/* dist/
+        name: dist-manylinux2014-3.7
+    - run: mv -v dist-manylinux2014-3.7/* dist/
 
-    - name: Stage ubuntu-latest 3.8
+    - name: Stage manylinux2014 3.8
       uses: actions/download-artifact@v1
       with:
-        name: dist-ubuntu-latest-3.8
-    - run: mv -v dist-ubuntu-latest-3.8/* dist/
+        name: dist-manylinux2014-3.8
+    - run: mv -v dist-manylinux2014-3.8/* dist/
 
     - name: Stage macos-latest 3.5
       uses: actions/download-artifact@v1
