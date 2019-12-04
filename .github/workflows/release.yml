@@ -17,10 +17,10 @@ jobs:
     - uses: actions/checkout@master
 
     - name: Install Python package dependencies
-      run: /opt/python/cp35-cp35m/python -m pip install cython wheel
+      run: /opt/python/cp35-cp35m/bin/python -m pip install cython wheel
 
     - name: Build binary wheel
-      run: /opt/python/cp35-cp35m/python setup.py bdist_wheel
+      run: /opt/python/cp35-cp35m/bin/python setup.py bdist_wheel
 
     - name: Archive dist artifacts
       uses: actions/upload-artifact@v1
