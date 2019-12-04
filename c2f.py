@@ -1,4 +1,3 @@
-# cython: language_level=3
 "Celsius to Fahrenheit Library"
 
 def convert(celsius: float) -> float:
