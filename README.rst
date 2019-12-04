@@ -128,3 +128,8 @@ Appendix
 
    $ gcc -g -shared -pthread -fPIC -fwrapv -O2 -Wall -fno-strict-aliasing -I/Library/Frameworks/Python.framework/Versions/3.8/include/python3.8 -L/Library/Frameworks/Python.framework/Versions/3.8/lib -o c2f.so c2f.c -lpython3.8
    $ objdump -S -df=___pyx_pw_3c2f_1convert c2f.so
+
+.. code-block:: shell
+
+   $ git tag -a v0.0.2 -m v0.0.2
+   $ git push --tags
