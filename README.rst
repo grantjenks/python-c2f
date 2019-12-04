@@ -1,6 +1,15 @@
 Cython for All with GitHub Actions
 ==================================
 
+TODO
+----
+
+- Add README sections for release workflow
+
+- Build docs for zoom-ability
+
+- Release only on version tag
+
 
 Is Python interpreted or compiled?
 ----------------------------------
