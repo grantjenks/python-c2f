@@ -74,10 +74,10 @@ jobs:
     - uses: actions/checkout@master
 
     - name: Install Python package dependencies
-      run: /opt/python/cp38-cp38m/bin/python -m pip install cython wheel
+      run: /opt/python/cp38-cp38/bin/python -m pip install cython wheel
 
     - name: Build binary wheel
-      run: /opt/python/cp38-cp38m/bin/python setup.py bdist_wheel
+      run: /opt/python/cp38-cp38/bin/python setup.py bdist_wheel
 
     - name: Archive dist artifacts
       uses: actions/upload-artifact@v1
