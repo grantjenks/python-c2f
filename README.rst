@@ -106,10 +106,19 @@ GitHub Workflow
 ---------------
 
 
-Future
-------
+Summmary
+--------
 
-Check out https://github.com/grantjenks/python-runstats for a more complete example.
+Is Python an interpreted or compiled language? Trick question. It’s actually
+both. With tools like Cython, we can take the compilation step further and
+remove the interpreter loop almost entirely. Cython produces binaries much like
+C++, Go, and Rust do. Now with GitHub Actions the cross-platform build and
+release process can be automated for free for Open Source projects. This is an
+enormous opportunity to make the Python ecosystem 20-50% faster with a single
+pull request. The lightning talk will walk through a GitHub workflow that
+publishes Cython-optimized wheels to PyPI. Discover how Cython can turbo-charge
+your Python code and GitHub Actions can simplify your cross-platform release
+process for free.
 
 
 Appendix
