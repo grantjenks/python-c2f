@@ -23,12 +23,12 @@ jobs:
       run: /opt/python/cp35-cp35m/bin/python setup.py bdist_wheel
 
     - name: Apply auditwheel
-      run: auditwheel repair dist/*
+      run: auditwheel repair -w dist dist/*
 
     - name: Archive dist artifacts
       uses: actions/upload-artifact@v1
       with:
-        name: dist-manylinux2014-3.5
+        name: dist-linux-3.5
         path: dist
 
   build-linux-cp36:
@@ -44,10 +44,13 @@ jobs:
     - name: Build binary wheel
       run: /opt/python/cp36-cp36m/bin/python setup.py bdist_wheel
 
+    - name: Apply auditwheel
+      run: auditwheel repair -w dist dist/*
+
     - name: Archive dist artifacts
       uses: actions/upload-artifact@v1
       with:
-        name: dist-manylinux2014-3.6
+        name: dist-linux-3.6
         path: dist
 
   build-linux-cp37:
@@ -63,10 +66,13 @@ jobs:
     - name: Build binary wheel
       run: /opt/python/cp37-cp37m/bin/python setup.py bdist_wheel
 
+    - name: Apply auditwheel
+      run: auditwheel repair -w dist dist/*
+
     - name: Archive dist artifacts
       uses: actions/upload-artifact@v1
       with:
-        name: dist-manylinux2014-3.7
+        name: dist-linux-3.7
         path: dist
 
   build-linux-cp38:
@@ -82,10 +88,13 @@ jobs:
     - name: Build binary wheel
       run: /opt/python/cp38-cp38/bin/python setup.py bdist_wheel
 
+    - name: Apply auditwheel
+      run: auditwheel repair -w dist dist/*
+
     - name: Archive dist artifacts
       uses: actions/upload-artifact@v1
       with:
-        name: dist-manylinux2014-3.8
+        name: dist-linux-3.8
         path: dist
 
   build-macos:
@@ -170,29 +179,29 @@ jobs:
     - name: Create source dist
       run: python setup.py sdist
 
-    - name: Stage manylinux2014 3.5
+    - name: Stage linux 3.5
       uses: actions/download-artifact@v1
       with:
-        name: dist-manylinux2014-3.5
-    - run: mv -v dist-manylinux2014-3.5/* dist/
+        name: dist-linux-3.5
+    - run: mv -v dist-linux-3.5/* dist/
 
-    - name: Stage manylinux2014 3.6
+    - name: Stage linux 3.6
       uses: actions/download-artifact@v1
       with:
-        name: dist-manylinux2014-3.6
-    - run: mv -v dist-manylinux2014-3.6/* dist/
+        name: dist-linux-3.6
+    - run: mv -v dist-linux-3.6/* dist/
 
-    - name: Stage manylinux2014 3.7
+    - name: Stage linux 3.7
       uses: actions/download-artifact@v1
       with:
-        name: dist-manylinux2014-3.7
-    - run: mv -v dist-manylinux2014-3.7/* dist/
+        name: dist-linux-3.7
+    - run: mv -v dist-linux-3.7/* dist/
 
-    - name: Stage manylinux2014 3.8
+    - name: Stage linux 3.8
       uses: actions/download-artifact@v1
       with:
-        name: dist-manylinux2014-3.8
-    - run: mv -v dist-manylinux2014-3.8/* dist/
+        name: dist-linux-3.8
+    - run: mv -v dist-linux-3.8/* dist/
 
     - name: Stage macos 3.5
       uses: actions/download-artifact@v1
