@@ -21,26 +21,30 @@ jobs:
     - uses: actions/checkout@master
 
     - name: Download Build Tools for Visual Studio 2019
-      if: matrix.os == 'windows-latest'
+      if: matrix.os != 'windows-latest' || matrix.python-version != '3.5'
       run: Invoke-WebRequest -Uri https://aka.ms/vs/16/release/vs_buildtools.exe -OutFile vs_buildtools.exe
 
     - name: Run vs_buildtools.exe install
-      if: matrix.os == 'windows-latest'
+      if: matrix.os != 'windows-latest' || matrix.python-version != '3.5'
       run: ./vs_buildtools.exe --quiet --wait --norestart --nocache --add Microsoft.VisualStudio.Component.VC.Tools.x86.x64 --add Microsoft.VisualStudio.Component.VC.v141.x86.x64 --add Microsoft.VisualStudio.Component.VC.140 --includeRecommended
 
     - name: Set up Python ${{ matrix.python-version }} x64
+      if: matrix.os != 'windows-latest' || matrix.python-version != '3.5'
       uses: actions/setup-python@v1
       with:
         python-version: ${{ matrix.python-version }}
         architecture: x64
 
     - name: Install Python package dependencies
+      if: matrix.os != 'windows-latest' || matrix.python-version != '3.5'
       run: pip install cython wheel
 
     - name: Build binary wheel
+      if: matrix.os != 'windows-latest' || matrix.python-version != '3.5'
       run: python setup.py bdist_wheel
 
     - name: Archive dist artifacts
+      if: matrix.os != 'windows-latest' || matrix.python-version != '3.5'
       uses: actions/upload-artifact@v1
       with:
         name: dist-${{ matrix.os }}-${{ matrix.python-version }}
@@ -84,6 +88,12 @@ jobs:
         name: dist-windows-latest-3.8
     - run: mv -v dist-windows-latest-3.8/* dist/
 
+    - name: Stage ubuntu-latest 3.5
+      uses: actions/download-artifact@v1
+      with:
+        name: dist-ubuntu-latest-3.5
+    - run: mv -v dist-ubuntu-latest-3.5/* dist/
+
     - name: Stage ubuntu-latest 3.6
       uses: actions/download-artifact@v1
       with:
@@ -101,6 +111,12 @@ jobs:
       with:
         name: dist-ubuntu-latest-3.8
     - run: mv -v dist-ubuntu-latest-3.8/* dist/
+
+    - name: Stage macos-latest 3.5
+      uses: actions/download-artifact@v1
+      with:
+        name: dist-macos-latest-3.5
+    - run: mv -v dist-macos-latest-3.5/* dist/
 
     - name: Stage macos-latest 3.6
       uses: actions/download-artifact@v1
