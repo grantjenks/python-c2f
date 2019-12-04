@@ -14,7 +14,7 @@ jobs:
     strategy:
       max-parallel: 12
       matrix:
-        os: [windows-latest, ubuntu-latest, macos-latest]
+        os: [windows-latest, macos-latest]
         python-version: [3.5, 3.6, 3.7, 3.8]
 
     steps:
@@ -88,30 +88,6 @@ jobs:
         name: dist-windows-latest-3.8
     - run: mv -v dist-windows-latest-3.8/* dist/
 
-    - name: Stage ubuntu-latest 3.5
-      uses: actions/download-artifact@v1
-      with:
-        name: dist-ubuntu-latest-3.5
-    - run: mv -v dist-ubuntu-latest-3.5/* dist/
-
-    - name: Stage ubuntu-latest 3.6
-      uses: actions/download-artifact@v1
-      with:
-        name: dist-ubuntu-latest-3.6
-    - run: mv -v dist-ubuntu-latest-3.6/* dist/
-
-    - name: Stage ubuntu-latest 3.7
-      uses: actions/download-artifact@v1
-      with:
-        name: dist-ubuntu-latest-3.7
-    - run: mv -v dist-ubuntu-latest-3.7/* dist/
-
-    - name: Stage ubuntu-latest 3.8
-      uses: actions/download-artifact@v1
-      with:
-        name: dist-ubuntu-latest-3.8
-    - run: mv -v dist-ubuntu-latest-3.8/* dist/
-
     - name: Stage macos-latest 3.5
       uses: actions/download-artifact@v1
       with:
@@ -141,5 +117,6 @@ jobs:
         TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
         TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
       run: |
+        ls -l dist/*
         pip install twine
         twine upload dist/*
