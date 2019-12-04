@@ -17,10 +17,10 @@ jobs:
     - uses: actions/checkout@master
 
     - name: Install Python package dependencies
-      run: /opt/python/cp35-cp35mu/bin/python -m pip install cython wheel
+      run: /opt/python/cp35-cp35m/bin/python -m pip install cython wheel
 
     - name: Build binary wheel
-      run: /opt/python/cp35-cp35mu/bin/python setup.py bdist_wheel
+      run: /opt/python/cp35-cp35m/bin/python setup.py bdist_wheel
 
     - name: Apply auditwheel
       run: auditwheel repair -w dist dist/*
@@ -42,10 +42,10 @@ jobs:
     - uses: actions/checkout@master
 
     - name: Install Python package dependencies
-      run: /opt/python/cp36-cp36mu/bin/python -m pip install cython wheel
+      run: /opt/python/cp36-cp36m/bin/python -m pip install cython wheel
 
     - name: Build binary wheel
-      run: /opt/python/cp36-cp36mu/bin/python setup.py bdist_wheel
+      run: /opt/python/cp36-cp36m/bin/python setup.py bdist_wheel
 
     - name: Apply auditwheel
       run: auditwheel repair -w dist dist/*
@@ -67,10 +67,10 @@ jobs:
     - uses: actions/checkout@master
 
     - name: Install Python package dependencies
-      run: /opt/python/cp37-cp37mu/bin/python -m pip install cython wheel
+      run: /opt/python/cp37-cp37m/bin/python -m pip install cython wheel
 
     - name: Build binary wheel
-      run: /opt/python/cp37-cp37mu/bin/python setup.py bdist_wheel
+      run: /opt/python/cp37-cp37m/bin/python setup.py bdist_wheel
 
     - name: Apply auditwheel
       run: auditwheel repair -w dist dist/*
