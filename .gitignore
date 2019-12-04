@@ -1,0 +1,11 @@
+*.py[co]
+*.so
+*.dSYM
+*.c
+
+.DS_Store
+
+env*/
+build/
+c2f.egg-info/
+dist/

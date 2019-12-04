@@ -1,0 +1,9 @@
+from setuptools import setup
+from Cython.Build import cythonize
+
+setup(
+    name='c2f',
+    version='0.0.0',
+    py_modules=['c2f'],
+    ext_modules=cythonize('c2f.py'),
+)
