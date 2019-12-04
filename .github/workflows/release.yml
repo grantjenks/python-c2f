@@ -137,7 +137,9 @@ jobs:
     - run: mv -v dist-macos-latest-3.8/* dist/
 
     - name: Upload using twine
+      env:
+        TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
+        TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
       run: |
         pip install twine
-        echo Uploading dist files
-        ls -al dist
+        twine upload dist/*
