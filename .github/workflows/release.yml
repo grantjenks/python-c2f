@@ -9,28 +9,18 @@ on:
 
 jobs:
 
-  build-linux:
+  build-linux-cp35:
     runs-on: ubuntu-latest
     container: quay.io/pypa/manylinux2014_x86_64
-    strategy:
-      max-parallel: 4
-      matrix:
-        python-version: [3.5, 3.6, 3.7, 3.8]
 
     steps:
     - uses: actions/checkout@master
 
-    - name: Set up Python ${{ matrix.python-version }} x64
-      uses: actions/setup-python@v1
-      with:
-        python-version: ${{ matrix.python-version }}
-        architecture: x64
-
     - name: Install Python package dependencies
-      run: python -m pip install cython wheel
+      run: /opt/python/cp35-cp35m/python -m pip install cython wheel
 
     - name: Build binary wheel
-      run: python setup.py bdist_wheel
+      run: /opt/python/cp35-cp35m/python setup.py bdist_wheel
 
     - name: Archive dist artifacts
       uses: actions/upload-artifact@v1
@@ -101,7 +91,7 @@ jobs:
         path: dist
 
   upload:
-    needs: [build-linux, build-macos, build-windows]
+    needs: [build-linux-cp35, build-macos, build-windows]
     runs-on: ubuntu-latest
 
     steps:
