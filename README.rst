@@ -23,8 +23,6 @@ c2f.py
 setup.py
 --------
 
-  $ python setup.py sdist
-
 .. code-block:: python
 
    from setuptools import setup
@@ -57,7 +55,9 @@ c2f.cpython-38.pyc
 c2f.c
 -----
 
-  $ cython c2f.py
+.. code-block:: shell
+
+   $ cython c2f.py
 
 .. code-block:: c
 
@@ -73,11 +73,10 @@ c2f.c
 c2f.so
 ------
 
-  $ pip install wheel
-  $ python setup.py bdist_wheel
+.. code-block:: shell
 
-  $ gcc -g -shared -pthread -fPIC -fwrapv -O2 -Wall -fno-strict-aliasing -I/Library/Frameworks/Python.framework/Versions/3.8/include/python3.8 -L/Library/Frameworks/Python.framework/Versions/3.8/lib -o c2f.so c2f.c -lpython3.8
-  $ objdump -S -df=___pyx_pw_3c2f_1convert c2f.so
+   $ pip install wheel
+   $ python setup.py bdist_wheel
 
 .. code-block:: nasm
 
@@ -102,3 +101,12 @@ Future
 ------
 
 Check out https://github.com/grantjenks/python-runstats for a more complete example.
+
+
+Appendix
+--------
+
+.. code-block:: shell
+
+   $ gcc -g -shared -pthread -fPIC -fwrapv -O2 -Wall -fno-strict-aliasing -I/Library/Frameworks/Python.framework/Versions/3.8/include/python3.8 -L/Library/Frameworks/Python.framework/Versions/3.8/lib -o c2f.so c2f.c -lpython3.8
+   $ objdump -S -df=___pyx_pw_3c2f_1convert c2f.so
