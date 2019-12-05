@@ -192,20 +192,6 @@ Mac Build Steps
      run: python setup.py bdist_wheel
 
 
-Store Build Artifacts
----------------------
-
-.. code-block:: yaml
-   :linenos:
-   :emphasize-lines: 2
-
-   - name: Archive dist artifacts
-     uses: actions/upload-artifact@v1
-     with:
-       name: dist-macos-${{ matrix.python-version }}
-       path: dist
-
-
 Linux auditwheel Tool
 ---------------------
 
@@ -235,6 +221,20 @@ Windows Build Steps
 
    - name: Run vs_buildtools.exe install
      run: ./vs_buildtools.exe --quiet --wait --norestart ...
+
+
+Store Build Artifacts
+---------------------
+
+.. code-block:: yaml
+   :linenos:
+   :emphasize-lines: 2
+
+   - name: Archive dist artifacts
+     uses: actions/upload-artifact@v1
+     with:
+       name: dist-macos-${{ matrix.python-version }}
+       path: dist
 
 
 Source Distribution
