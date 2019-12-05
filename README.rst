@@ -7,7 +7,7 @@ remove the interpreter loop almost entirely. Cython produces binaries much like
 C++, Go, and Rust do. Now with GitHub Actions the cross-platform build and
 release process can be automated for free for Open Source projects. This is an
 enormous opportunity to make the Python ecosystem 20-50% faster with a single
-pull request. This lightning talk will walk through a GitHub workflow that
+pull request. This lightning talk walks through a GitHub workflow that
 publishes Cython-optimized wheels to PyPI. Discover how Cython can turbo-charge
 your Python code and GitHub Actions can simplify your cross-platform release
 process for free.
@@ -18,7 +18,9 @@ SF Python Holiday Party 2019
 
 | Grant Jenks
 | Dec. 4, 2019
+| `grantjenks.com/docs/cython-for-all`_
 | `github.com/grantjenks/python-c2f`_
+| `pypi.org/project/c2f/#files`_
 
 
 Is Python interpreted or compiled?
@@ -269,9 +271,11 @@ Upload with Twine
 Cythonize all the Things!
 -------------------------
 
-| Grant Jenks
-| Dec. 4, 2019
+PLEASE STEAL THE CODE!
+
+| `grantjenks.com/docs/cython-for-all`_
 | `github.com/grantjenks/python-c2f`_
+| `pypi.org/project/c2f/#files`_
 
 *Cythonize all the Things!*
 
@@ -285,7 +289,9 @@ Cythonize all the Things!
 
 *Cythonize all the Things!*
 
+.. _grantjenks.com/docs/cython-for-all: http://grantjenks.com/docs/cython-for-all/
 .. _github.com/grantjenks/python-c2f: https://github.com/grantjenks/python-c2f/
+.. _pypi.org/project/c2f/#files: https://pypi.org/project/c2f/#files
 
 
 Appendix

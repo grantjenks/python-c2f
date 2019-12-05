@@ -20,7 +20,9 @@ SF Python Holiday Party 2019
 
 | Grant Jenks
 | Dec. 4, 2019
+| `grantjenks.com/docs/cython-for-all`_
 | `github.com/grantjenks/python-c2f`_
+| `pypi.org/project/c2f/#files`_
 
 
 Is Python interpreted or compiled?
@@ -299,9 +301,11 @@ Upload with Twine
 Cythonize all the Things!
 -------------------------
 
-| Grant Jenks
-| Dec. 4, 2019
+PLEASE STEAL THE CODE!
+
+| `grantjenks.com/docs/cython-for-all`_
 | `github.com/grantjenks/python-c2f`_
+| `pypi.org/project/c2f/#files`_
 
 *Cythonize all the Things!*
 
@@ -315,7 +319,9 @@ Cythonize all the Things!
 
 *Cythonize all the Things!*
 
+.. _grantjenks.com/docs/cython-for-all: http://grantjenks.com/docs/cython-for-all/
 .. _github.com/grantjenks/python-c2f: https://github.com/grantjenks/python-c2f/
+.. _pypi.org/project/c2f/#files: https://pypi.org/project/c2f/#files
 
 
 Appendix
