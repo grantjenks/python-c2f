@@ -255,7 +255,7 @@ jobs:
         name: dist-windows-3.8
     - run: mv -v dist-windows-3.8/* dist/
 
-    - name: Upload using twine
+    - name: Upload with twine
       env:
         TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
         TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
