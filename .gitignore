@@ -6,6 +6,7 @@
 .DS_Store
 
 env*/
+_build/
 build/
 c2f.egg-info/
 dist/
