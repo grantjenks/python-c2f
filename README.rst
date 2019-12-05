@@ -334,4 +334,5 @@ Git Tagging
 .. code-block:: shell
 
    $ git tag -a v0.0.2 -m v0.0.2
+   $ git push
    $ git push --tags
