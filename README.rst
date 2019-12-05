@@ -18,7 +18,7 @@ SF Python Holiday Party 2019
 
 | Grant Jenks
 | Dec. 4, 2019
-| `github.com/grantjenks/python-c2f <https://github.com/grantjenks/python-c2f/>`_
+| `github.com/grantjenks/python-c2f`_
 
 
 Is Python interpreted or compiled?
@@ -299,7 +299,7 @@ Cythonize all the Things!
 
 | Grant Jenks
 | Dec. 4, 2019
-| `github.com/grantjenks/python-c2f <https://github.com/grantjenks/python-c2f/>`_
+| `github.com/grantjenks/python-c2f`_
 
 *Cythonize all the Things!*
 
@@ -312,6 +312,8 @@ Cythonize all the Things!
 *Cythonize all the Things!*
 
 *Cythonize all the Things!*
+
+.. _github.com/grantjenks/python-c2f: https://github.com/grantjenks/python-c2f/
 
 
 Appendix
