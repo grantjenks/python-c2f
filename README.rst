@@ -42,8 +42,6 @@ c2f.py
 ------
 
 .. code-block:: python
-   :linenos:
-   :emphasize-lines: 5
 
    "Celsius to Fahrenheit Library"
 
@@ -57,8 +55,6 @@ c2f.cpython-38.pyc
 ------------------
 
 .. code-block:: pycon
-   :linenos:
-   :emphasize-lines: 2
 
    >>> import c2f
    >>> dis.dis(c2f.convert)
@@ -76,8 +72,6 @@ setup.py
 --------
 
 .. code-block:: python
-   :linenos:
-   :emphasize-lines: 2, 8
 
    from setuptools import setup
    from Cython.Build import cythonize
@@ -98,8 +92,6 @@ c2f.c
    $ cython c2f.py
 
 .. code-block:: c
-   :linenos:
-   :emphasize-lines: 5
 
    static PyObject * __pyx_convert(double __pyx_v_celsius)
    {
@@ -119,8 +111,6 @@ c2f.so
    $ python setup.py bdist_wheel
 
 .. code-block:: nasm
-   :linenos:
-   :emphasize-lines: 6, 7
 
    ___pyx_convert:
    push	  rbp
@@ -139,8 +129,6 @@ c2f.so
 -----------------------------
 
 .. code-block:: yaml
-   :linenos:
-   :emphasize-lines: 5, 9
 
    name: release
    on:
@@ -159,8 +147,6 @@ Matrix Build
 ------------
 
 .. code-block:: yaml
-   :linenos:
-   :emphasize-lines: 4, 5, 6
 
    build-macos:
      runs-on: macos-latest
@@ -176,8 +162,6 @@ Mac Build Steps
 ---------------
 
 .. code-block:: yaml
-   :linenos:
-   :emphasize-lines: 1, 7, 10
 
    - name: Set up Python ${{ matrix.python-version }} x64
      uses: actions/setup-python@v1
@@ -196,8 +180,6 @@ Linux auditwheel Tool
 ---------------------
 
 .. code-block:: yaml
-   :linenos:
-   :emphasize-lines: 1, 4, 7
 
    - name: Build binary wheel
      run: /opt/python/cp38-cp38/bin/python setup.py bdist_wheel
@@ -213,8 +195,6 @@ Windows Build Steps
 -------------------
 
 .. code-block:: yaml
-   :linenos:
-   :emphasize-lines: 1, 4
 
    - name: Download Build Tools for Visual Studio 2019
      run: Invoke-WebRequest -Uri https://aka.ms/vs/16/rel...
@@ -227,8 +207,6 @@ Store Build Artifacts
 ---------------------
 
 .. code-block:: yaml
-   :linenos:
-   :emphasize-lines: 2
 
    - name: Archive dist artifacts
      uses: actions/upload-artifact@v1
@@ -241,8 +219,6 @@ Source Distribution
 -------------------
 
 .. code-block:: yaml
-   :linenos:
-   :emphasize-lines: 2, 6, 9
 
    upload:
      needs: [build-linux-cp35, ...]
@@ -260,8 +236,6 @@ Stage Binary Wheels
 -------------------
 
 .. code-block:: yaml
-   :linenos:
-   :emphasize-lines: 2, 4, 5
 
    - name: Stage linux 3.8
      uses: actions/download-artifact@v1
@@ -281,8 +255,6 @@ Upload with Twine
 -----------------
 
 .. code-block:: yaml
-   :linenos:
-   :emphasize-lines: 3, 4, 8
 
    - name: Upload with twine
      env:
