@@ -3,7 +3,7 @@ from Cython.Build import cythonize
 
 setup(
     name='c2f',
-    version='0.0.2',
+    version='1.0.0',
     py_modules=['c2f'],
     ext_modules=cythonize('c2f.py'),
     long_description=open('README.rst').read(),
