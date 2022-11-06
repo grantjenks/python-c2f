@@ -18,6 +18,7 @@ SF Python Holiday Party 2019
 
 | Grant Jenks
 | Dec. 4, 2019
+| `Cython for All with GitHub Actions Video`_
 | `grantjenks.com/docs/cython-for-all`_
 | `github.com/grantjenks/python-c2f`_
 | `pypi.org/project/c2f/#files`_
@@ -289,6 +290,7 @@ PLEASE STEAL THE CODE!
 
 *Cythonize all the Things!*
 
+.. _`Cython for All with GitHub Actions Video`: https://www.youtube.com/watch?v=-7_07O5ENhU
 .. _grantjenks.com/docs/cython-for-all: http://grantjenks.com/docs/cython-for-all/
 .. _github.com/grantjenks/python-c2f: https://github.com/grantjenks/python-c2f/
 .. _pypi.org/project/c2f/#files: https://pypi.org/project/c2f/#files
