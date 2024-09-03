@@ -190,67 +190,67 @@ jobs:
       run: python setup.py sdist
 
     - name: Stage linux 3.5
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4.1.7
       with:
         name: dist-linux-3.5
     - run: mv -v dist-linux-3.5/* dist/
 
     - name: Stage linux 3.6
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4.1.7
       with:
         name: dist-linux-3.6
     - run: mv -v dist-linux-3.6/* dist/
 
     - name: Stage linux 3.7
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4.1.7
       with:
         name: dist-linux-3.7
     - run: mv -v dist-linux-3.7/* dist/
 
     - name: Stage linux 3.8
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4.1.7
       with:
         name: dist-linux-3.8
     - run: mv -v dist-linux-3.8/* dist/
 
     - name: Stage macos 3.5
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4.1.7
       with:
         name: dist-macos-3.5
     - run: mv -v dist-macos-3.5/* dist/
 
     - name: Stage macos 3.6
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4.1.7
       with:
         name: dist-macos-3.6
     - run: mv -v dist-macos-3.6/* dist/
 
     - name: Stage macos 3.7
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4.1.7
       with:
         name: dist-macos-3.7
     - run: mv -v dist-macos-3.7/* dist/
 
     - name: Stage macos 3.8
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4.1.7
       with:
         name: dist-macos-3.8
     - run: mv -v dist-macos-3.8/* dist/
 
     - name: Stage windows 3.6
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4.1.7
       with:
         name: dist-windows-3.6
     - run: mv -v dist-windows-3.6/* dist/
 
     - name: Stage windows 3.7
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4.1.7
       with:
         name: dist-windows-3.7
     - run: mv -v dist-windows-3.7/* dist/
 
     - name: Stage windows 3.8
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4.1.7
       with:
         name: dist-windows-3.8
     - run: mv -v dist-windows-3.8/* dist/
